@@ -14,14 +14,14 @@ const Lisk = {
 
 // 3. Create a metadata object
 const metadata = {
-  name: 'LearningFi',
-  description: 'A decentralized student grant and loaning platform',
+  name: 'EduFundMe',
+  description: 'A decentralized student loan platform',
   url: 'https://mywebsite.com', // origin must match your domain & subdomain
   icons: ['https://avatars.mywebsite.com/']
 }
 
 // 4. Create Ethers config
-const ethersConfig = defaultConfig({
+export const ethersConfig = defaultConfig({
   /*Required*/
   metadata,
 
