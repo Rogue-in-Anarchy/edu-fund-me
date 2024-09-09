@@ -1,0 +1,16 @@
+[
+    {
+        "id": "L-001",
+        "amount": "$5,000",
+        "interestRate": "5%",
+        "term": "24 Months",
+        "outstandingBalance": "$2,500"
+    },
+    {
+        "id": "L-002",
+        "amount": "$7,500",
+        "interestRate": "4.5%",
+        "term": "36 Months",
+        "outstandingBalance": "$5,000"
+    }
+]
