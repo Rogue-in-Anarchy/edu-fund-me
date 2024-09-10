@@ -1,5 +1,5 @@
 import React from "react";
-import sideimage from "@/assests/banner.svg";
+import sideimage from "@/assets/banner.svg";
 import Image from "next/image";
 import { Nunito } from "next/font/google";
 import { Lora } from "next/font/google";

@@ -1,11 +1,11 @@
-import firstimage from "@/assests/dashboard.svg";
-import secondimage from "@/assests/proposal.svg";
-import thirdimage from "@/assests/myproposal.svg";
-import fourthimage from "@/assests/loan.svg";
-import fifthimage from "@/assests/notification.svg";
-import sixthimage from "@/assests/profile.svg";
-import seventhimage from "@/assests/setting.svg";
-import eighthimage from "@/assests/help.svg";
+import firstimage from "@/assets/dashboard.svg";
+import secondimage from "@/assets/proposal.svg";
+import thirdimage from "@/assets/myproposal.svg";
+import fourthimage from "@/assets/loan.svg";
+import fifthimage from "@/assets/notification.svg";
+import sixthimage from "@/assets/profile.svg";
+import seventhimage from "@/assets/setting.svg";
+import eighthimage from "@/assets/help.svg";
 
 const navbar = [
   { id: 1, title: "Dashboard", link: "/dashboard", image: firstimage },

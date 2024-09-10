@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import GetStartedButton from "./get-started";
 import Logo from "./logo";
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
