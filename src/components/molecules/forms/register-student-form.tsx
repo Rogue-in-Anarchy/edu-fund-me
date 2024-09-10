@@ -37,7 +37,7 @@ const StudentForm: React.FC = () => {
   const register = async () => {
     try {
       const upload = await pinata.upload.file(transcript);
-      const hash = process.env.NEXT_PUBLIC_gateway + "/ipfs/" + upload.IpfsHash;
+      const hash = process.env.NEXT_PUBLIC_gateway + "/ipfs/" + upload.cid;
       registerStudent(hash);
       console.log(hash);
       console.log(upload);
