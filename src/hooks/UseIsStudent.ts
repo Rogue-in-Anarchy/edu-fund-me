@@ -9,8 +9,8 @@ const useIsStudent = () =>{
     useEffect(() => {
         const check = async() => {
             try{
-                const LearningContract = getEduFundMeContract(readOnlyProvider);
-                const registered = await LearningContract.isStudent(address);
+                const EduFundContract = getEduFundMeContract(readOnlyProvider);
+                const registered = await EduFundContract.isStudent(address);
                 setIsStudent(registered);
                 console.log(registered);
             }

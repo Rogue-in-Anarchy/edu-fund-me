@@ -6,7 +6,7 @@ export const SUPPORTED_CHAIN = 4202;
 // 2. Set chains
 const Lisk = {
   chainId: SUPPORTED_CHAIN,
-  name: 'lisk-sepolia',
+  name: 'lisk-sepolia-testnet',
   currency: 'ETH',
   explorerUrl: 'https://sepolia-blockscout.lisk.com/',
   rpcUrl: process.env.NEXT_PUBLIC_rpc_url || '',
