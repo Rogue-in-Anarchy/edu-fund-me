@@ -8,7 +8,7 @@
             },
             {
                 "internalType": "address",
-                "name": "_learningFiAddress",
+                "name": "_eduFundMeAddress",
                 "type": "address"
             },
             {
@@ -80,7 +80,7 @@
             },
             {
                 "indexed": true,
-                "internalType": "enum LearningFiGovernance.GrantStatus",
+                "internalType": "enum EduFundMeGovernance.GrantStatus",
                 "name": "status",
                 "type": "uint8"
             }
@@ -239,7 +239,7 @@
                         "type": "uint256"
                     }
                 ],
-                "internalType": "struct LearningFiGovernance.DAOMembers",
+                "internalType": "struct EduFundMeGovernance.DAOMembers",
                 "name": "",
                 "type": "tuple"
             }
@@ -305,7 +305,7 @@
                 "type": "uint256"
             },
             {
-                "internalType": "enum LearningFiGovernance.GrantStatus",
+                "internalType": "enum EduFundMeGovernance.GrantStatus",
                 "name": "status",
                 "type": "uint8"
             },
@@ -523,7 +523,7 @@
                         "type": "uint256"
                     },
                     {
-                        "internalType": "enum LearningFiGovernance.GrantStatus",
+                        "internalType": "enum EduFundMeGovernance.GrantStatus",
                         "name": "status",
                         "type": "uint8"
                     },
@@ -543,7 +543,7 @@
                         "type": "bool"
                     }
                 ],
-                "internalType": "struct LearningFiGovernance.GrantRequests[]",
+                "internalType": "struct EduFundMeGovernance.GrantRequests[]",
                 "name": "",
                 "type": "tuple[]"
             }
@@ -593,7 +593,7 @@
                         "type": "uint256"
                     }
                 ],
-                "internalType": "struct LearningFiGovernance.DAOMembers[]",
+                "internalType": "struct EduFundMeGovernance.DAOMembers[]",
                 "name": "",
                 "type": "tuple[]"
             }
@@ -648,7 +648,7 @@
                         "type": "uint256"
                     },
                     {
-                        "internalType": "enum LearningFiGovernance.GrantStatus",
+                        "internalType": "enum EduFundMeGovernance.GrantStatus",
                         "name": "status",
                         "type": "uint8"
                     },
@@ -668,7 +668,7 @@
                         "type": "bool"
                     }
                 ],
-                "internalType": "struct LearningFiGovernance.GrantRequests[]",
+                "internalType": "struct EduFundMeGovernance.GrantRequests[]",
                 "name": "",
                 "type": "tuple[]"
             }
@@ -687,7 +687,7 @@
         "name": "viewGrantStatus",
         "outputs": [
             {
-                "internalType": "enum LearningFiGovernance.GrantStatus",
+                "internalType": "enum EduFundMeGovernance.GrantStatus",
                 "name": "",
                 "type": "uint8"
             }
@@ -748,7 +748,7 @@
                         "type": "uint256"
                     },
                     {
-                        "internalType": "enum LearningFiGovernance.GrantStatus",
+                        "internalType": "enum EduFundMeGovernance.GrantStatus",
                         "name": "status",
                         "type": "uint8"
                     },
@@ -768,7 +768,7 @@
                         "type": "bool"
                     }
                 ],
-                "internalType": "struct LearningFiGovernance.GrantRequests",
+                "internalType": "struct EduFundMeGovernance.GrantRequests",
                 "name": "",
                 "type": "tuple"
             }

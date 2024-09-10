@@ -338,7 +338,7 @@
                         "type": "bool"
                     }
                 ],
-                "internalType": "struct LearningFi.Student[]",
+                "internalType": "struct EduFundMe.Student[]",
                 "name": "",
                 "type": "tuple[]"
             }
