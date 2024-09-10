@@ -1,7 +1,7 @@
 import { getGovernanceContract } from "@/utils/constants/contracts";
 import { Status } from "@/utils/constants/enums";
 import { readOnlyProvider } from "@/utils/constants/provider";
-import { useWeb3ModalAccount, useWeb3ModalProvider } from "@web3modal/ethers/react"
+import { useWeb3ModalAccount } from "@web3modal/ethers/react"
 import { useEffect, useState } from "react";
 
 export interface Proposal {

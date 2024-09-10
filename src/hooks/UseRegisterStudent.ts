@@ -1,4 +1,4 @@
-import { getLearningContract } from "@/utils/constants/contracts";
+import { getEduFundMeContract } from "@/utils/constants/contracts";
 import { getProvider, isSupportedChain } from "@/utils/constants/provider";
 import { useWeb3ModalAccount, useWeb3ModalProvider } from "@web3modal/ethers/react"
 import { useCallback } from "react";
@@ -13,7 +13,7 @@ const UseRegisterStudent = () => {
 
         console.log(signer)
 
-        const contract = getLearningContract(signer)
+        const contract = getEduFundMeContract(signer)
 
         try {
             if(!isSupportedChain(chainId) || !isConnected) return console.log("Not supported");

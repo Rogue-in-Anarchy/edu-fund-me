@@ -1,4 +1,4 @@
-import { getLearningContract } from "@/utils/constants/contracts"
+import { getEduFundMeContract } from "@/utils/constants/contracts"
 import { readOnlyProvider } from "@/utils/constants/provider"
 import { useWeb3ModalAccount } from "@web3modal/ethers/react"
 import { useEffect, useState } from "react"
@@ -9,7 +9,7 @@ const useIsStudent = () =>{
     useEffect(() => {
         const check = async() => {
             try{
-                const LearningContract = getLearningContract(readOnlyProvider);
+                const LearningContract = getEduFundMeContract(readOnlyProvider);
                 const registered = await LearningContract.isStudent(address);
                 setIsStudent(registered);
                 console.log(registered);
