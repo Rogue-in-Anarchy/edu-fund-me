@@ -1,5 +1,5 @@
 import { SUPPORTED_CHAIN } from "@/connection";
-import { getLearningContract } from "@/utils/constants/contracts";
+import { getEduFundMeContract } from "@/utils/constants/contracts";
 import { getProvider } from "@/utils/constants/provider";
 import { useWeb3ModalAccount, useWeb3ModalProvider } from "@web3modal/ethers/react";
 import { useCallback } from "react";
@@ -13,7 +13,7 @@ const UseCreateProposal = () => {
         const readWriteProvider = getProvider(walletProvider);
         const signer = await readWriteProvider.getSigner();
 
-        const contract = getLearningContract(signer);
+        const contract = getEduFundMeContract(signer);
 
         try{
 

@@ -1,11 +1,11 @@
-import total from "@/assests/proposals/total.svg";
-import approved from "@/assests/proposals/approved.svg";
-import denied from "@/assests/proposals/denied.svg";
-import pending from "@/assests/proposals/pending.svg";
-import all from "@/assests/proposals/all.svg";
-import current from "@/assests/proposals/current.svg";
+import total from "@/assets/proposals/total.svg";
+import approved from "@/assets/proposals/approved.svg";
+import denied from "@/assets/proposals/denied.svg";
+import pending from "@/assets/proposals/pending.svg";
+import all from "@/assets/proposals/all.svg";
+import current from "@/assets/proposals/current.svg";
 
-import arrowup from "@/assests/proposals/arrow-up.svg";
+import arrowup from "@/assets/proposals/arrow-up.svg";
 
 const proposal = [
   { id: 1, title: "Total Proposal", image: total, value: "3, 000" },
