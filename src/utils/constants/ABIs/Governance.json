@@ -1,0 +1,815 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_tokenAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_learningFiAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_minimumJoinDAO",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_maximumJoinDAO",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "grantId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "student",
+                "type": "address"
+            }
+        ],
+        "name": "GrantRequested",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "member",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "JoinedDAO",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "grantId",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "enum LearningFiGovernance.GrantStatus",
+                "name": "status",
+                "type": "uint8"
+            }
+        ],
+        "name": "grantClosed",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "Overflow",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "claimGovernanceFee",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "claimRequiredVoting",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "result",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "depositGovernanceFee",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_grantID",
+                "type": "uint256"
+            }
+        ],
+        "name": "donate",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_joinAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "joinDAO",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "joinDAOMaximum",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "joinDAOMinimum",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_memberAddress",
+                "type": "address"
+            }
+        ],
+        "name": "memberViewData",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "Amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "votePower",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "joined",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "dateJoined",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "newClaim",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "memberAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "percentageLevel",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct LearningFiGovernance.DAOMembers",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "memberWithdrawFunds",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "proposalByAddress",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "amountRequested",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "title",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "institution",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "imageIPFSHash",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "student",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "requestDate",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "grantID",
+                "type": "uint256"
+            },
+            {
+                "internalType": "enum LearningFiGovernance.GrantStatus",
+                "name": "status",
+                "type": "uint8"
+            },
+            {
+                "internalType": "uint256",
+                "name": "totalVote",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bool",
+                "name": "claimable",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_student",
+                "type": "address"
+            },
+            {
+                "internalType": "string",
+                "name": "_imageIPFSHash",
+                "type": "string"
+            }
+        ],
+        "name": "registerStudent",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_title",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_description",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "_imageIPFSHash",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_institution",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "_student",
+                "type": "address"
+            }
+        ],
+        "name": "requestGrant",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_maximumJoinDAO",
+                "type": "uint256"
+            }
+        ],
+        "name": "setMaximumToJoinDAO",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_minimumJoinDAO",
+                "type": "uint256"
+            }
+        ],
+        "name": "setMinimumToJoinDAO",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "studentMap",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "totalDAOFund",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "totalDAOMembers",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "totalVotingPower",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_idGrantRequests",
+                "type": "uint256"
+            }
+        ],
+        "name": "userWithdrawGrant",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "viewAllApprovedGrants",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "amountRequested",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "institution",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "imageIPFSHash",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "student",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "requestDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "grantID",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "enum LearningFiGovernance.GrantStatus",
+                        "name": "status",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address[]",
+                        "name": "membersvoted",
+                        "type": "address[]"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "totalVote",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "claimable",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct LearningFiGovernance.GrantRequests[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "viewAllDAOMembers",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "Amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "votePower",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "joined",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "dateJoined",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "newClaim",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "memberAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "percentageLevel",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct LearningFiGovernance.DAOMembers[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "viewAllGrantRequests",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "amountRequested",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "institution",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "imageIPFSHash",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "student",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "requestDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "grantID",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "enum LearningFiGovernance.GrantStatus",
+                        "name": "status",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address[]",
+                        "name": "membersvoted",
+                        "type": "address[]"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "totalVote",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "claimable",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct LearningFiGovernance.GrantRequests[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_grantID",
+                "type": "uint256"
+            }
+        ],
+        "name": "viewGrantStatus",
+        "outputs": [
+            {
+                "internalType": "enum LearningFiGovernance.GrantStatus",
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_grantID",
+                "type": "uint256"
+            }
+        ],
+        "name": "viewIndividualClaim",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "amountRequested",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "institution",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "imageIPFSHash",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "student",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "requestDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "grantID",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "enum LearningFiGovernance.GrantStatus",
+                        "name": "status",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address[]",
+                        "name": "membersvoted",
+                        "type": "address[]"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "totalVote",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "claimable",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct LearningFiGovernance.GrantRequests",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_id",
+                "type": "uint256"
+            }
+        ],
+        "name": "vote",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "_tokenAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_withDrawTo",
+                "type": "address"
+            }
+        ],
+        "name": "withdrawCustomTokens",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
